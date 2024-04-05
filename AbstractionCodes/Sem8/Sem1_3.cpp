@@ -24,6 +24,9 @@ struct pointS {
     }
 };
 
+// dro tu geqnat waikitxet
+// https://www.geeksforgeeks.org/comparator-in-cpp/
+
 int cmp(pointS p1, pointS p2) {
     // includes all except p1.i == p2.i
     if(p1.i < p2.i) return -1;
@@ -97,7 +100,6 @@ bool isFreePath(Grid<bool> &grid, pointS start, pointS end) {
         Vector<pointS> neibs = getAllNeighours(curr);
         for(pointS nb : neibs) {
 //            cout <<nb.i << nb.j << endl;
-            
             if(isValidCell(nb, grid.numRows(), grid.numCols()) && !isBlocked(nb, grid) &&!visited.contains(nb)) {
 //                cout <<nb.i << nb.j << endl;
                 que.enqueue(nb);
